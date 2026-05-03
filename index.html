@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイマー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="clock-img-wrap">
+      <img src="clock.jpg" alt="かわいい時計" class="clock-img">
+    </div>
+    <h1 class="title">タイマー</h1>
+
+    <div class="tabs">
+      <button class="tab active" data-mode="stopwatch">ストップウォッチ</button>
+      <button class="tab" data-mode="timer">タイマー</button>
+    </div>
+
+    <!-- Stopwatch -->
+    <div id="stopwatch" class="panel active">
+      <div class="display">
+        <span id="sw-min">00</span>
+        <span class="colon">:</span>
+        <span id="sw-sec">00</span>
+        <span class="dot">.</span>
+        <span id="sw-ms">00</span>
+      </div>
+      <div class="controls">
+        <button id="sw-lap" class="btn btn-secondary" disabled>ラップ</button>
+        <button id="sw-start" class="btn btn-primary">スタート</button>
+        <button id="sw-reset" class="btn btn-secondary" disabled>リセット</button>
+      </div>
+      <ul id="sw-laps" class="laps"></ul>
+    </div>
+
+    <!-- Timer -->
+    <div id="timer" class="panel">
+      <div class="display" id="timer-display">
+        <span id="t-hour">00</span>
+        <span class="colon">:</span>
+        <span id="t-min">00</span>
+        <span class="colon">:</span>
+        <span id="t-sec">00</span>
+      </div>
+      <div class="timer-set">
+        <div class="set-group">
+          <button class="adj" data-target="t-hour" data-delta="1">▲</button>
+          <span>時間</span>
+          <button class="adj" data-target="t-hour" data-delta="-1">▼</button>
+        </div>
+        <div class="set-group">
+          <button class="adj" data-target="t-min" data-delta="1">▲</button>
+          <span>分</span>
+          <button class="adj" data-target="t-min" data-delta="-1">▼</button>
+        </div>
+        <div class="set-group">
+          <button class="adj" data-target="t-sec" data-delta="1">▲</button>
+          <span>秒</span>
+          <button class="adj" data-target="t-sec" data-delta="-1">▼</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="t-reset" class="btn btn-secondary" disabled>リセット</button>
+        <button id="t-start" class="btn btn-primary">スタート</button>
+      </div>
+      <div id="timer-message" class="timer-message hidden">時間になりました！</div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
